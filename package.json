@@ -1,6 +1,6 @@
 {
   "name": "bitfields",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple bitfields in JavaScript.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
