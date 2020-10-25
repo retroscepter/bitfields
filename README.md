@@ -1,4 +1,4 @@
-# bitfields [![Build Status](https://travis-ci.com/chewyiscrunchy/bitfields.svg?branch=master)](https://travis-ci.com/chewyiscrunchy/bitfields) [![view on npm](http://img.shields.io/npm/v/bitfields.svg)](https://www.npmjs.org/package/bitfields)
+# bitfields [![Build Status](https://travis-ci.com/chewyiscrunchy/bitfields.svg?branch=main)](https://travis-ci.com/chewyiscrunchy/bitfields) [![view on npm](http://img.shields.io/npm/v/bitfields.svg)](https://www.npmjs.org/package/bitfields)
 
 Bitfields made easy in JavaScript.
 This is not yet compatible with browsers, please do not open an issue regarding this.
