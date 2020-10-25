@@ -4,7 +4,7 @@ import * as conversion from 'bigint-conversion'
 /**
  * Get byte size of a number.
  * 
- * @param num Number
+ * @param {number} num Number
  * 
  * @returns {number} Byte size
  */
@@ -17,7 +17,7 @@ export function getByteSize (num: number): number {
 /**
  * Convert ArrayBuffer to Buffer.
  * 
- * @param ab ArrayBuffer
+ * @param {ArrayBuffer} ab ArrayBuffer
  * 
  * @returns {Buffer} Converted Buffer
  */
@@ -31,12 +31,25 @@ export function toBuffer (ab: ArrayBuffer): Buffer {
 }
 
 /**
+ * Bitfield data.
+ * 
+ * @typedef {Buffer | ArrayBuffer | TypedArray | number} BitfieldData
+ */
+export type BitfieldData = Buffer |
+    ArrayBuffer |
+    TypedArray |
+    number
+
+/**
  * Bitfield options.
+ * 
+ * @typedef {Object} BitfieldOptions
+ * @property {number} [grow] If you set an index that is out of bounds, the Bitfield will automatically grow to this value.
  */
 export type BitfieldOptions = {
     /**
      * If you set an index that is out of bounds, the Bitfield will
-     * automatically grow to the specified value. If you want the Bitfield
+     * automatically grow to this value. If you want the Bitfield
      * to infinitely grow, set this to Infinity.
      */
     grow?: number
@@ -44,6 +57,8 @@ export type BitfieldOptions = {
 
 /**
  * Represents any or all typed arrays in Node.
+ * 
+ * @typedef {Int8Array | Int16Array | Int32Array | Uint8Array | Uint16Array | Uint32Array} TypedArray
  */
 export type TypedArray = Int8Array |
     Int16Array |
@@ -78,10 +93,10 @@ export class Bitfield {
     /**
      * Create a Bitfield.
      * 
-     * @param data Can be a Node.js Buffer, ArrayBuffer, typed array, numeric array, or a number representing the amount of bytes in the Bitfield
-     * @param opts Other options
+     * @param {BitfieldData} data Can be a Node.js Buffer, ArrayBuffer, typed array, numeric array, or a number representing the amount of bytes in the Bitfield
+     * @param {BitfieldOptions} opts Other options
      */
-    constructor (data: Buffer | ArrayBuffer | TypedArray | number = 0, opts?: BitfieldOptions) {
+    constructor (data: BitfieldData = 0, opts?: BitfieldOptions) {
         const grow = opts != null && opts.grow
         this.grow = (grow && isFinite(grow) && getByteSize(grow)) || grow || 0
         this.array = typeof data === 'number' ?
@@ -96,7 +111,7 @@ export class Bitfield {
      * 
      * @public
      * 
-     * @param i Bit index
+     * @param {number} i Bit index
      * 
      * @returns {boolean} True if the bit is set
      */
@@ -111,8 +126,8 @@ export class Bitfield {
      * 
      * @public
      * 
-     * @param i Bit index
-     * @param b Bit value
+     * @param {number} i Bit index
+     * @param {boolean | number} b Bit value
      * 
      * @returns {void}
      */
@@ -178,13 +193,28 @@ export class Bitfield {
     }
 
     /**
+     * Create a Bitfield from a Buffer or ArrayBuffer.
+     * 
+     * @public
+     * @static
+     * 
+     * @param {Buffer | ArrayBuffer} buffer Buffer
+     * @param {BitfieldOptions} opts Bitfield options
+     * 
+     * @returns {Bitfield} Bitfield
+     */
+    public static fromBuffer (buffer: Buffer | ArrayBuffer, opts?: BitfieldOptions): Bitfield {
+        return new Bitfield(buffer, opts)
+    }
+
+    /**
      * Create a Bitfield from a BigInt.
      * 
      * @public
      * @static
      * 
-     * @param bigint BigInt
-     * @param opts Bitfield options
+     * @param {bigint} bigint BigInt
+     * @param {BitfieldOptions} opts Bitfield options
      * 
      * @returns {Bitfield} Bitfield
      */
@@ -198,8 +228,8 @@ export class Bitfield {
      * @public
      * @static
      * 
-     * @param hex Hexadecimal string
-     * @param opts Bitfield options
+     * @param {string} hex Hexadecimal string
+     * @param {BitfieldOptions} opts Bitfield options
      * 
      * @returns {Bitfield} Bitfield
      */
@@ -213,8 +243,8 @@ export class Bitfield {
      * @public
      * @static
      * 
-     * @param string UTF-8 encoded string.
-     * @param opts Bitfield options
+     * @param {string} string UTF-8 encoded string.
+     * @param {BitfieldOptions} opts Bitfield options
      * 
      * @returns {Bitfield} Bitfield
      */
