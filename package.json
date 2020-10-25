@@ -6,7 +6,9 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "npx tsc -p tsconfig.json",
-    "build:watch": "npx tsc -w -p tsconfig.json"
+    "build:watch": "npx tsc -w -p tsconfig.json",
+    "build:docs": "npm run build && npm run docs",
+    "docs": "npx jsdoc2md lib/Bitfield.js --template README.hbs > README.md"
   },
   "repository": {
     "type": "git",
