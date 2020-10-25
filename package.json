@@ -10,7 +10,7 @@
     "build:docs": "npm run build && npm run docs",
     "build:test": "npm run build && npm run test",
     "docs": "npx jsdoc2md lib/Bitfield.js --template README.hbs > README.md",
-    "test": "jest"
+    "test": "jest --env=node"
   },
   "repository": {
     "type": "git",
