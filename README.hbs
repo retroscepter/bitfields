@@ -24,7 +24,7 @@ const { Bitfield } = require('bitfields')
 // or
 import { Bitfield } from 'bitfields'
 
-const bitfield = new Bitfield(64) // create a Bitfield with 256 bytes
+const bitfield = new Bitfield(64) // create a Bitfield with 64 bits
 
 bitfield.set(1) // set the first bit
 bitfield.set(1, 1) // same as above
@@ -54,7 +54,7 @@ console.log(string) // '@'
 const bitfieldFromBuffer = Bitfield.fromBuffer(buffer) // create a Bitfield from a Buffer
 const bitfieldFromBigInt = Bitfield.fromBigInt(bigint) // create a Bitfield from a BigInt
 const bitfieldFromHex = Bitfield.fromHex(hex) // create a Bitfield from a hexadecimal string
-const bitfieldFromString = Bitfield.fromString(string) // create a Bitfield from a UTF-8 encoded string
+const bitfieldFromString = Bitfield.fromString(string) // create a Bitfield from a string
 
 ```
 
