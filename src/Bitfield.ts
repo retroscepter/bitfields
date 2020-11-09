@@ -164,7 +164,7 @@ export class Bitfield {
      * 
      * @public
      * 
-     * @returns {Buffer} Node.js BigInt
+     * @returns {BigInt} Node.js BigInt
      */
     public toBigInt (): BigInt {
         return conversion.bufToBigint(this.array)
@@ -175,7 +175,7 @@ export class Bitfield {
      * 
      * @public
      * 
-     * @returns {Buffer} Node.js Buffer
+     * @returns {string} Hexadecimal string
      */
     public toHex (): string {
         return conversion.bufToHex(this.array)
@@ -186,7 +186,7 @@ export class Bitfield {
      * 
      * @public
      * 
-     * @returns {Buffer} Node.js Buffer
+     * @returns {string} UTF-8 encoded string
      */
     public toString (): string {
         return conversion.bufToText(this.array)
