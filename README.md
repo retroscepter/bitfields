@@ -1,4 +1,4 @@
-# bitfields [![Build Status](https://travis-ci.org/chewyiscrunchy/bitfields.svg?branch=master)](https://travis-ci.org/chewyiscrunchy/bitfields) [![view on npm](http://img.shields.io/npm/v/bitfields.svg)](https://www.npmjs.org/package/bitfields)
+# bitfields [![Build Status](https://travis-ci.com/chewyiscrunchy/bitfields.svg?branch=master)](https://travis-ci.com/chewyiscrunchy/bitfields) [![view on npm](http://img.shields.io/npm/v/bitfields.svg)](https://www.npmjs.org/package/bitfields)
 
 Bitfields made easy in JavaScript.
 This is not yet compatible with browsers, please do not open an issue regarding this.
@@ -89,9 +89,9 @@ Represents a Bitfield.
         * [.get(i)](#Bitfield+get) ⇒ <code>boolean</code>
         * [.set(i, b)](#Bitfield+set) ⇒ <code>void</code>
         * [.toBuffer()](#Bitfield+toBuffer) ⇒ <code>Buffer</code>
-        * [.toBigInt()](#Bitfield+toBigInt) ⇒ <code>Buffer</code>
-        * [.toHex()](#Bitfield+toHex) ⇒ <code>Buffer</code>
-        * [.toString()](#Bitfield+toString) ⇒ <code>Buffer</code>
+        * [.toBigInt()](#Bitfield+toBigInt) ⇒ <code>BigInt</code>
+        * [.toHex()](#Bitfield+toHex) ⇒ <code>string</code>
+        * [.toString()](#Bitfield+toString) ⇒ <code>string</code>
     * _static_
         * [.fromBuffer(buffer, opts)](#Bitfield.fromBuffer) ⇒ [<code>Bitfield</code>](#Bitfield)
         * [.fromBigInt(bigint, opts)](#Bitfield.fromBigInt) ⇒ [<code>Bitfield</code>](#Bitfield)
@@ -145,27 +145,27 @@ Convert Bitfield into a Buffer.
 **Access**: public  
 <a name="Bitfield+toBigInt"></a>
 
-### bitfield.toBigInt() ⇒ <code>Buffer</code>
+### bitfield.toBigInt() ⇒ <code>BigInt</code>
 Convert Bitfield into a BigInt.
 
 **Kind**: instance method of [<code>Bitfield</code>](#Bitfield)  
-**Returns**: <code>Buffer</code> - Node.js BigInt  
+**Returns**: <code>BigInt</code> - Node.js BigInt  
 **Access**: public  
 <a name="Bitfield+toHex"></a>
 
-### bitfield.toHex() ⇒ <code>Buffer</code>
+### bitfield.toHex() ⇒ <code>string</code>
 Convert Bitfield into a hexadecimal string.
 
 **Kind**: instance method of [<code>Bitfield</code>](#Bitfield)  
-**Returns**: <code>Buffer</code> - Node.js Buffer  
+**Returns**: <code>string</code> - Hexadecimal string  
 **Access**: public  
 <a name="Bitfield+toString"></a>
 
-### bitfield.toString() ⇒ <code>Buffer</code>
+### bitfield.toString() ⇒ <code>string</code>
 Convert Bitfield into a UTF-8 encoded string.
 
 **Kind**: instance method of [<code>Bitfield</code>](#Bitfield)  
-**Returns**: <code>Buffer</code> - Node.js Buffer  
+**Returns**: <code>string</code> - UTF-8 encoded string  
 **Access**: public  
 <a name="Bitfield.fromBuffer"></a>
 
