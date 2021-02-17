@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chewyiscrunchy/node-bitfield.git"
+    "url": "git+https://github.com/octavetoast/bitfields.git"
   },
   "author": "Braden Lamb",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chewyiscrunchy/node-bitfield/issues"
+    "url": "https://github.com/octavetoast/bitfields/issues"
   },
-  "homepage": "https://github.com/chewyiscrunchy/node-bitfield#readme",
+  "homepage": "https://github.com/octavetoast/bitfields#readme",
   "dependencies": {
     "bigint-conversion": "^2.1.11"
   },
