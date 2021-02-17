@@ -23,12 +23,12 @@
   },
   "homepage": "https://github.com/octavetoast/bitfields#readme",
   "dependencies": {
-    "bigint-conversion": "^2.1.11"
+    "bigint-conversion": "^2.1.12"
   },
   "devDependencies": {
-    "@types/node": "^14.14.2",
-    "jest": "^26.6.1",
+    "@types/node": "^14.14.28",
+    "jest": "^26.6.3",
     "jsdoc-to-markdown": "^6.0.1",
-    "typescript": "^4.0.3"
+    "typescript": "^4.1.5"
   }
 }
