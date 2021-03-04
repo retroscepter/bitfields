@@ -149,6 +149,18 @@ export class Bitfield {
     }
 
     /**
+     * Reset all bits.
+     * 
+     * @public
+     * 
+     * @returns {void}
+     */
+    public clear (): void {
+        const size = this.array.length * 8
+        for (let i = 0; i < size; i++) this.set(i, false)
+    }
+
+    /**
      * Convert Bitfield into a Buffer.
      * 
      * @public

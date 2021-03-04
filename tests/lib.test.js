@@ -35,3 +35,7 @@ test('convert to bigint', () => {
 test('convert to hexadecimal', () => {
     expect(bitfield.toHex()).toBe(HEX_RESULT)
 })
+
+test('clear', () => {
+    bitfield.clear()
+})
