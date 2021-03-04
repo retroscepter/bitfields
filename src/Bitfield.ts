@@ -4,13 +4,13 @@ import * as conversion from 'bigint-conversion'
 /**
  * Get byte size of a number.
  * 
- * @param {number} num Number
+ * @param {number} number Number
  * 
  * @returns {number} Byte size
  */
-export function getByteSize (num: number): number {
-    let out = num >> 3
-    if (num % 8 !== 0) out++
+export function getByteSize (number: number): number {
+    let out = number >> 3
+    if (number % 8 !== 0) out++
     return out
 }
 
@@ -22,12 +22,12 @@ export function getByteSize (num: number): number {
  * @returns {Buffer} Converted Buffer
  */
 export function toBuffer (ab: ArrayBuffer): Buffer {
-    var buf = Buffer.alloc(ab.byteLength)
+    var buffer = Buffer.alloc(ab.byteLength)
     var view = new Uint8Array(ab)
-    for (var i = 0; i < buf.length; ++i) {
-        buf[i] = view[i]
+    for (var i = 0; i < buffer.length; ++i) {
+        buffer[i] = view[i]
     }
-    return buf
+    return buffer
 }
 
 /**
@@ -111,14 +111,14 @@ export class Bitfield {
      * 
      * @public
      * 
-     * @param {number} i Bit index
+     * @param {number} index Bit index
      * 
      * @returns {boolean} True if the bit is set
      */
-    public get (i: number): boolean {
-        const j = i >> 3
-        return (j < this.array.length) &&
-            !!(this.array[j] & (128 >> (i % 8)))
+    public get (index: number): boolean {
+        const i = index >> 3
+        return (i < this.array.length) &&
+            !!(this.array[i] & (128 >> (index % 8)))
     }
 
     /**
@@ -126,25 +126,25 @@ export class Bitfield {
      * 
      * @public
      * 
-     * @param {number} i Bit index
-     * @param {boolean | number} b Bit value
+     * @param {number} index Bit index
+     * @param {boolean | number} value Bit value
      * 
      * @returns {void}
      */
-    public set (i: number, b: boolean | number = true): void {
-        const j = i >> 3
-        if (b) {
-            if (this.array.length < j + 1) {
-                const length = Math.max(j + 1, Math.min(2 * this.array.length, this.grow))
+    public set (index: number, value: boolean | number = true): void {
+        const i = index >> 3
+        if (value) {
+            if (this.array.length < i + 1) {
+                const length = Math.max(i + 1, Math.min(2 * this.array.length, this.grow))
                 if (length <= this.grow) {
                     const newArray = new Uint8Array(length)
                     newArray.set(this.array)
                     this.array = newArray
                 }
             }
-            this.array[j] |= 128 >> (i % 8)
-        } else if (j < this.array.length) {
-            this.array[j] &= ~(128 >> (i % 8))
+            this.array[i] |= 128 >> (index % 8)
+        } else if (i < this.array.length) {
+            this.array[i] &= ~(128 >> (index % 8))
         }
     }
 
