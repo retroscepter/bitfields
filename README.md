@@ -68,7 +68,7 @@ This is a basic example. For detailed documentation on each of these methods, ch
 ## Functions
 
 <dl>
-<dt><a href="#getByteSize">getByteSize(num)</a> ⇒ <code>number</code></dt>
+<dt><a href="#getByteSize">getByteSize(number)</a> ⇒ <code>number</code></dt>
 <dd><p>Get byte size of a number.</p>
 </dd>
 <dt><a href="#toBuffer">toBuffer(ab)</a> ⇒ <code>Buffer</code></dt>
@@ -86,8 +86,9 @@ Represents a Bitfield.
 * [Bitfield](#Bitfield)
     * [new Bitfield(data, opts)](#new_Bitfield_new)
     * _instance_
-        * [.get(i)](#Bitfield+get) ⇒ <code>boolean</code>
-        * [.set(i, b)](#Bitfield+set) ⇒ <code>void</code>
+        * [.get(index)](#Bitfield+get) ⇒ <code>boolean</code>
+        * [.set(index, value)](#Bitfield+set) ⇒ <code>void</code>
+        * [.clear()](#Bitfield+clear) ⇒ <code>void</code>
         * [.toBuffer()](#Bitfield+toBuffer) ⇒ <code>Buffer</code>
         * [.toBigInt()](#Bitfield+toBigInt) ⇒ <code>BigInt</code>
         * [.toHex()](#Bitfield+toHex) ⇒ <code>string</code>
@@ -111,7 +112,7 @@ Create a Bitfield.
 
 <a name="Bitfield+get"></a>
 
-### bitfield.get(i) ⇒ <code>boolean</code>
+### bitfield.get(index) ⇒ <code>boolean</code>
 Check if a bit is set.
 
 **Kind**: instance method of [<code>Bitfield</code>](#Bitfield)  
@@ -120,11 +121,11 @@ Check if a bit is set.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| i | <code>number</code> | Bit index |
+| index | <code>number</code> | Bit index |
 
 <a name="Bitfield+set"></a>
 
-### bitfield.set(i, b) ⇒ <code>void</code>
+### bitfield.set(index, value) ⇒ <code>void</code>
 Set a bit.
 
 **Kind**: instance method of [<code>Bitfield</code>](#Bitfield)  
@@ -132,9 +133,16 @@ Set a bit.
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| i | <code>number</code> |  | Bit index |
-| b | <code>boolean</code> \| <code>number</code> | <code>true</code> | Bit value |
+| index | <code>number</code> |  | Bit index |
+| value | <code>boolean</code> \| <code>number</code> | <code>true</code> | Bit value |
 
+<a name="Bitfield+clear"></a>
+
+### bitfield.clear() ⇒ <code>void</code>
+Reset all bits.
+
+**Kind**: instance method of [<code>Bitfield</code>](#Bitfield)  
+**Access**: public  
 <a name="Bitfield+toBuffer"></a>
 
 ### bitfield.toBuffer() ⇒ <code>Buffer</code>
@@ -225,7 +233,7 @@ Create a Bitfield from a UTF-8 encoded string.
 
 <a name="getByteSize"></a>
 
-## getByteSize(num) ⇒ <code>number</code>
+## getByteSize(number) ⇒ <code>number</code>
 Get byte size of a number.
 
 **Kind**: global function  
@@ -233,7 +241,7 @@ Get byte size of a number.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| num | <code>number</code> | Number |
+| number | <code>number</code> | Number |
 
 <a name="toBuffer"></a>
 
