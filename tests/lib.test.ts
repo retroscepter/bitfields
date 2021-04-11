@@ -1,5 +1,4 @@
-
-const { Bitfield } = require('../lib')
+import { Bitfield } from '../src'
 
 const bitfield = new Bitfield(64)
 

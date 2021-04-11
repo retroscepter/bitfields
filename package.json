@@ -1,17 +1,12 @@
 {
   "name": "bitfields",
   "version": "1.0.2",
-  "description": "Simple bitfields in JavaScript.",
+  "description": "Easy-to-use bitfields for Node.js and browsers.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "lint": "npx prettier --write src",
-    "build": "npx tsc -p tsconfig.json",
-    "build:watch": "npx tsc -w -p tsconfig.json",
-    "build:docs": "npm run build && npm run docs",
-    "build:test": "npm run build && npm run test",
-    "docs": "npx jsdoc2md lib/Bitfield.js --template README.hbs > README.md",
-    "test": "jest --env=node"
+    "test": "make test",
+    "prepublishOnly": "make test && make build && make bundle"
   },
   "repository": {
     "type": "git",
@@ -23,14 +18,20 @@
     "url": "https://github.com/octavetoast/bitfields/issues"
   },
   "homepage": "https://github.com/octavetoast/bitfields#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.14.37",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3",
+    "typedoc": "^0.20.35",
+    "typescript": "^4.1.5",
+    "webpack": "^5.31.2",
+    "webpack-cli": "^4.6.0"
+  },
   "dependencies": {
     "bigint-conversion": "^2.1.12"
-  },
-  "devDependencies": {
-    "@types/node": "^14.14.28",
-    "jest": "^26.6.3",
-    "jsdoc-to-markdown": "^6.0.1",
-    "prettier": "^2.2.1",
-    "typescript": "^4.1.5"
   }
 }

@@ -56,7 +56,13 @@ export type BitfieldOptions = {
  *
  * @typedef {Int8Array | Int16Array | Int32Array | Uint8Array | Uint16Array | Uint32Array} TypedArray
  */
-export type TypedArray = Int8Array | Int16Array | Int32Array | Uint8Array | Uint16Array | Uint32Array
+export type TypedArray =
+    | Int8Array
+    | Int16Array
+    | Int32Array
+    | Uint8Array
+    | Uint16Array
+    | Uint32Array
 
 /**
  * Represents a Bitfield.
@@ -126,7 +132,10 @@ export class Bitfield {
         const i = index >> 3
         if (value) {
             if (this.array.length < i + 1) {
-                const length = Math.max(i + 1, Math.min(2 * this.array.length, this.grow))
+                const length = Math.max(
+                    i + 1,
+                    Math.min(2 * this.array.length, this.grow)
+                )
                 if (length <= this.grow) {
                     const newArray = new Uint8Array(length)
                     newArray.set(this.array)
@@ -206,7 +215,10 @@ export class Bitfield {
      *
      * @returns {Bitfield} Bitfield
      */
-    public static fromBuffer(buffer: Buffer | ArrayBuffer, opts?: BitfieldOptions): Bitfield {
+    public static fromBuffer(
+        buffer: Buffer | ArrayBuffer,
+        opts?: BitfieldOptions
+    ): Bitfield {
         return new Bitfield(buffer, opts)
     }
 
