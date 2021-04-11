@@ -1,6 +1,6 @@
 {
   "name": "bitfields",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Easy-to-use bitfields for Node.js and browsers.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

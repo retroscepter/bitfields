@@ -13,7 +13,7 @@ npm install --save bitfields
 For use in the browser without a bundler, include this script tag in your HTML.
 
 ```HTML
-<script src="https://unpkg.com/binlingo@1.0.2/dist/bitfields.js"></script>
+<script src="https://unpkg.com/bitfields@1.0.3/dist/bitfields.js"></script>
 ```
 
 ## Usage
