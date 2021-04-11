@@ -1,4 +1,4 @@
-# bitfields [![Node CI](https://github.com/octavetoast/binlingo/actions/workflows/node.yml/badge.svg)](https://github.com/octavetoast/binlingo/actions/workflows/node.yml) [![view on npm](http://img.shields.io/npm/v/bitfields.svg)](https://www.npmjs.org/package/bitfields)
+# bitfields [![Node CI](https://github.com/octavetoast/bitfields/actions/workflows/node.yml/badge.svg)](https://github.com/octavetoast/bitfields/actions/workflows/node.yml) [![Coverage Status](https://coveralls.io/repos/github/octavetoast/bitfields/badge.svg?branch=main)](https://coveralls.io/github/octavetoast/bitfields?branch=main)
 
 Easy-to-use bitfields for Node.js and browsers.
 
